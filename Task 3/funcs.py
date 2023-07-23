@@ -14,15 +14,15 @@ def q2():
   print("\n3 Times Table\n")
   while True:
     try:
-      limit = int(input("How high do you want the times table to go to: ")) + 1
-      if limit < 0:
+      limit = int(input("How high do you want the times table to go to: "))
+      if limit < 1:
         raise ValueError # raise an exception to disallow inputs that are negative
     except ValueError:
       print("\nOnly integers that are larger than 0 are allowed\n")
     else:
       break
   print(" ")
-  for i in range(1, limit):
+  for i in range(1, limit + 1):
     print(f'{i} x 3 = {i * 3}')
 
 def q3():
@@ -49,11 +49,24 @@ def q4():
 
 def q5():
   print("\nKilogram to Stones & Pounds Converter\n")
-  kgMass = float(input("Please enter your mass in kilograms: "))
+  while True:
+    try:
+      kgMass = float(input("Please enter your mass in kilograms: "))
+      if kgMass < 0:
+        raise ValueError # exception raised if value provided is negative
+    except ValueError:
+      print("Mass has to be a positive value")
+    else:
+      break
   kgToPounds = kgMass * 2.20462
-  stones = int(kgToPounds / 14)   # int function rounds down the conversion from pounds to stones (easier than importing math module)
-  pounds = round(kgToPounds % 14)
-  print(f'Your converted mass is {stones} stones and {pounds} pounds')
+  stones = int(kgToPounds / 14)  # 'int' function rounds down the conversion from pounds to stones (better than importing math module)
+  pounds = round(kgToPounds % 14, 3)
+  if stones == 0 and pounds != 0:
+    print(f'{kgMass}kg is equal to {pounds}lb')
+  elif stones != 0 and pounds == 0:
+    print(f'{kgMass}kg is equal to {stones}st')
+  else:
+    print(f'{kgMass}kg is equal to {stones}st and {pounds}lb')
 
 function_dict = {
     1: q1,
