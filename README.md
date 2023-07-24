@@ -1,4 +1,4 @@
-# StDomsTransitionWork
+# CS Transition Work for St Dominics
 
 [Task 1 [Survey]](https://github.com/chudasmat/StDomsTransitionWork/blob/main/Documents%20%5BTasks%201%2C2%2C4%5D/Task%201%20%5BSurvey%5D.pdf)  
 [Task 2 [Essay]](https://github.com/chudasmat/StDomsTransitionWork/blob/972922e213eaff90b8997fe70f3ce01ee22534c5/Documents%20%5BTasks%201%2C2%2C4%5D/Task%202%20%5BEssay%5D.pdf)  
