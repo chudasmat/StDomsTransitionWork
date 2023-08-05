@@ -30,7 +30,7 @@ def q3():
   ttable = int(input("Please enter the number of the times table you would like: "))
   while True:
     try:
-      limit = int(input("How high do you want the times table to go to: ")) + 1
+      limit = int(input("How high do you want the times table to go to: "))
       if limit < 0:
         raise ValueError  # raise an exception to disallow inputs that are negative
     except ValueError:
@@ -38,7 +38,7 @@ def q3():
     else:
       break
   print(" ")
-  for i in range(1, limit):
+  for i in range(1, limit + 1):
     print(f'{i} x {ttable} = {i * ttable}')
 
 def q4():
@@ -62,11 +62,11 @@ def q5():
   stones = int(kgToPounds / 14)  # 'int' function rounds down the conversion from pounds to stones (better than importing math module)
   pounds = round(kgToPounds % 14, 3)
   if stones == 0 and pounds != 0:
-    print(f'{kgMass}kg is equal to {pounds}lb')
+    print(f'{int(kgMass) if kgMass % 1 == 0 else kgMass}kg is equal to {pounds}lb')
   elif stones != 0 and pounds == 0:
-    print(f'{kgMass}kg is equal to {stones}st')
+    print(f'{int(kgMass) if kgMass % 1 == 0 else kgMass}kg is equal to {stones}st')
   else:
-    print(f'{kgMass}kg is equal to {stones}st and {pounds}lb')
+    print(f'{int(kgMass) if kgMass % 1 == 0 else kgMass}kg is equal to {stones}st and {pounds}lb')
 
 function_dict = {
     1: q1,
